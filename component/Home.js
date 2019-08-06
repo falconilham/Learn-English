@@ -67,10 +67,16 @@ export default class Home extends Component {
                 </View>
                 </Modal>
                 <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Dictionary')}>
-                    <Text>Dictionary</Text>
+                    <View style={{width: "80%", height: "80%"}}>
+                        <Image source={require('./image/book1.png')}  style={{maxWidth: "100%", maxHeight: "100%", width: "100%"}}/>
+                        <Text style={styles.fonts}>Dictionary</Text>
+                    </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Quiz')}>
-                    <Text>Quiz</Text>
+                    <View style={{width: "100%", height: "80%"}}>
+                        <Image source={require('./image/quiz.png')}  style={{maxWidth: "100%", maxHeight: "100%", width: "100%"}}/>
+                        <Text style={styles.fonts}>Quiz</Text>
+                    </View>
                 </TouchableOpacity>
             </ImageBackground>
         )
@@ -82,9 +88,9 @@ const styles = StyleSheet.create({
         display: "flex", 
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-around",
         width: "100%",
-        height: "100%"
+        height: "100%",
+        backgroundColor: "white"
     },
     container_modal:{
         alignSelf: "center", 
@@ -107,6 +113,9 @@ const styles = StyleSheet.create({
         height: "30%", 
         justifyContent: "center", 
         alignItems: "center", 
-        borderWidth: 2
+    },
+    fonts:{
+        textAlign: "center",
+        fontSize: 20
     }
 })

@@ -9,9 +9,11 @@ export default class Quiz extends React.Component {
         super(props);
         this.state = {
             soal: [],
-            number: 0
+            number: 0,
+            nilai: 0
         }
     }
+
     UNSAFE_componentWillMount = () => {
         let soal_array = Soal.slice();
         let random = Math.floor(Math.random() * soal_array.length)
@@ -20,14 +22,61 @@ export default class Quiz extends React.Component {
             soal_array.splice(soal_array[random], 1)
         }
     }
+
+    GantiSoal = (e,i,item) => {
+        if(item === this.state.soal[this.state.number].jawaban_benar){
+            this.setState({
+                nilai: this.state.nilai + 1 * 10 / 2
+            })
+        }else{
+            this.setState({
+                nilai: this.state.nilai + 0 * 10 / 2
+            })
+        }
+        if(this.state.number === 19){
+            alert("selesai")
+        }else{
+            this.setState({
+                number: this.state.number + 1
+            })
+        }
+    }
     render(){
         const ribet = this.state
         return(
-            <View>
-                <Text>{ribet.number}</Text>
-                <Text>{ribet.soal[ribet.number].Soal}</Text>
-                <Button onPress={() => this.setState({number : ribet.number + 1})} title="Next Soal"></Button>
+            <View style={styles.container}>
+                <View style={styles.form_jawaban}>
+                    <Text style={styles.font}>{ribet.soal[ribet.number].Soal}</Text>
+                    <View style={{flex : 1, flexDirection: 'row', flexWrap: "wrap", alignItems: 'flex-start', justifyContent: "space-around"}}>
+                        {ribet.soal[ribet.number].jawaban.map((item, i ) => {
+                        return(
+                        <View key={i} style={{width: "35%", marginVertical: 20, marginTop: 20}}>
+                            <TouchableOpacity onPress={() => alert(item)}>
+                                <Text>{item}</Text>
+                            </TouchableOpacity>
+                        </View>
+                        )
+                        })}
+                    </View>
+                </View>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container:{
+        justifyContent: "space-around",
+        alignItems: 'center'
+    },  
+    form_jawaban:{
+        padding: 10,
+        backgroundColor:"white",
+        height: "35%",
+        width: "80%",
+        borderRadius: 10,
+    },
+    font:{
+        textAlign: "center"
+    }
+})

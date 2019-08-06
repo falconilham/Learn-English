@@ -1,0 +1,21 @@
+{
+    "Fruits":[
+        {
+            "name": "Lion = Singa",
+            "image": "require('./image/')"
+        },
+        {
+
+        }
+    ],
+    "Hobby":[
+        {
+
+        }
+    ],
+    "Animals":[
+        {
+
+        }
+    ]
+}
