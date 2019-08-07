@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-labels */
 /* eslint-disable prettier/prettier */
@@ -96,14 +97,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppStack = createStackNavigator({ Home: Home, Quiz: Quiz, Dictionary: Dictionary});
+const AppStack = createStackNavigator({ Home: Home, Dictionary: Dictionary});
 const AuthStack = createStackNavigator({ SignIn: Login });
+const AppQuiz = createStackNavigator({ Quiz: Quiz });
 
 export default createAppContainer(createSwitchNavigator(
   {
     AuthLoading: AuthLoadingScreen,
     App: AppStack,
     Auth: AuthStack,
+    Quiz : AppQuiz
   },
   {
     initialRouteName: 'AuthLoading',
