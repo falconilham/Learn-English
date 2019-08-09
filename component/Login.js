@@ -16,6 +16,8 @@ import { createSwitchNavigator, createStackNavigator, createAppContainer } from 
 import AsyncStorage from '@react-native-community/async-storage';
 import Home from "./Home";
 import Quiz from './Quiz';
+import Score from './Score';
+import Data_Materi from './Data_Materi';
 import Dictionary from './Dictionary';
 import AuthLoadingScreen from "./AuthLoadingScreen";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppStack = createStackNavigator({ Home: Home, Dictionary: Dictionary});
+const AppStack = createStackNavigator({ Home: Home, Dictionary: Dictionary, Data_Materi: Data_Materi });
 const AuthStack = createStackNavigator({ SignIn: Login });
 const AppQuiz = createStackNavigator({ Quiz: Quiz });
 
@@ -106,7 +108,8 @@ export default createAppContainer(createSwitchNavigator(
     AuthLoading: AuthLoadingScreen,
     App: AppStack,
     Auth: AuthStack,
-    Quiz : AppQuiz
+    Quiz : AppQuiz,
+    Score: Score
   },
   {
     initialRouteName: 'AuthLoading',

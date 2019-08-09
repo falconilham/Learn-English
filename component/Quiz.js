@@ -41,7 +41,7 @@ export default class Quiz extends React.Component {
             })
         }
         if(this.state.number === 19){
-            alert("selesai Nilai Anda " + this.state.nilai)
+            this.props.navigation.navigate('Score', {nilai: this.state.nilai});
         }else{
             this.setState({
                 number: this.state.number + 1

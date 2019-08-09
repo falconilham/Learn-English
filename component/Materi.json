@@ -1,8 +1,10 @@
 {
     "Fruits":[
         {
-            "name": "Lion = Singa",
-            "image": "require('./image/')"
+            "english": "Lion",
+            "indonesia": "singa",
+            "image": "require('./image/lion.jpg')"
+
         },
         {
 
@@ -10,12 +12,17 @@
     ],
     "Hobby":[
         {
-
+            "english": "Lion",
+            "indonesia": "singa",
+            "image": "require('./image/lion.jpg')"
         }
     ],
     "Animals":[
         {
-
+            "english": "Lion",
+            "indonesia": "singa",
+            "image": "require('./image/lion.jpg')"
         }
     ]
+    
 }

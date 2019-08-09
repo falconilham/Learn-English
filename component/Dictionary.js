@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { StyleSheet, ScrollView, View, Text, TextInput, Button, TouchableOpacity, Image, Modal, ImageBackground } from "react-native";/* eslint-disable no-trailing-spaces */
 import AsyncStorage from '@react-native-community/async-storage';
+import Data from './Materi';
 
 export default class Dictionary extends React.Component {
     constructor(props){
@@ -64,19 +65,19 @@ export default class Dictionary extends React.Component {
                     </View>
                 </View>
             </Modal>
-                <TouchableOpacity style={styles.item_Home}>
+                <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Data_Materi', {Data: Data.Fruits})}>
                     <View style={{width: "100%", justifyContent: "center", alignItems: "center"}}>
                         <Image source={require('./image/fruits.png')}  style={{maxWidth: "80%", maxHeight: "80%", width: "100%"}}/>
-                        <Text style={styles.fonts}>Fruits</Text>
+                        <Text style={styles.fonts}>Fruits {Data.Fruits.length}</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.item_Home}>
+                <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Data_Materi', {Data: Data.Hobby})}>
                     <View style={{width: "100%", justifyContent: "center", alignItems: "center"}}>
                         <Image source={require('./image/Hobby.png')}  style={{maxWidth: "80%", maxHeight: "80%", width: "100%"}}/>
                         <Text style={styles.fonts}>Hobby</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.item_Home}>
+                <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Data_Materi', {Data: Data.Animals})}>
                     <View style={{width: "100%", justifyContent: "center", alignItems: "center"}}>
                         <Image source={require('./image/Animals.png')}  style={{maxWidth: "80%", maxHeight: "80%", width: "100%"}}/>
                         <Text style={styles.fonts}>Animals</Text>
