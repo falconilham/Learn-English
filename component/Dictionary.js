@@ -68,7 +68,7 @@ export default class Dictionary extends React.Component {
                 <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Data_Materi', {Data: Data.Fruits})}>
                     <View style={{width: "100%", justifyContent: "center", alignItems: "center"}}>
                         <Image source={require('./image/fruits.png')}  style={{maxWidth: "80%", maxHeight: "80%", width: "100%"}}/>
-                        <Text style={styles.fonts}>Fruits {Data.Fruits.length}</Text>
+                        <Text style={styles.fonts}>Fruits</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item_Home} onPress={() => this.props.navigation.navigate('Data_Materi', {Data: Data.Hobby})}>

@@ -224,13 +224,6 @@
     "jawaban_benar": "eat"
   },
   {
-    "id": 33,
-    "tipe_soal": "text",
-    "Soal": "Don’t . . . at the class, please!",
-    "jawaban": ["open","eat","clean","put"],
-    "jawaban_benar": "eat"
-  },
-  {
     "id": 34,
     "tipe_soal": "text",
     "Soal": "Mom, this is Mutiara. … my friend.",
@@ -297,7 +290,7 @@
   {
     "id": 43,
     "tipe_soal": "text",
-    "Soal": " My family and I will move to Jakarta. ....fawill go next week.",
+    "Soal": " My family and I will move to Jakarta. .... will go next week.",
     "jawaban": ["They","Our","We","Us"],
     "jawaban_benar": "We"
   },

@@ -10,7 +10,8 @@ export default class Quiz extends React.Component {
         this.state = {
             soal: [],
             number: 0,
-            nilai: 0
+            nilai: 0,
+            random: Math.floor(Math.random() * Soal.length)
         }
     }
 
@@ -22,11 +23,11 @@ export default class Quiz extends React.Component {
     }
 
     UNSAFE_componentWillMount = () => {
-        let soal_array = Soal.slice();
-        let random = Math.floor(Math.random() * soal_array.length)
+        let soal = Soal.slice();
+        let random = Math.floor(Math.random() * soal.length)
         for(var x = 0; x < 20; x++){
-            this.state.soal.push(soal_array[Math.floor(Math.random() * soal_array.length)])
-            soal_array.splice(soal_array[random], 1)
+            this.state.soal.push(soal[random])
+            soal.splice(soal[random], 1)
         }
     }
 
@@ -66,9 +67,10 @@ export default class Quiz extends React.Component {
                             )
                             })}
                     </View>
-                </View>
-                <View style={{bottom: 100, position: "absolute", color: "white"}}>
-                    <Text>Good Luck</Text>
+                    <View style={{backgroundColor: "#d13b07", width: "80%"}}>
+                        <Text style={styles.font}>Your Score </Text>
+                        <Text style={styles.font}>{this.state.nilai}</Text>
+                    </View>
                 </View>
             </View>
         )
@@ -140,5 +142,9 @@ const styles = StyleSheet.create({
       width: "80%",
       marginBottom: 30,
       borderRadius: 10
+    },
+    font:{
+        textAlign: "center",
+        color: "white"
     }
 });
