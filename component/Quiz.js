@@ -29,6 +29,7 @@ export default class Quiz extends React.Component {
             this.state.soal.push(soal[random])
             soal.splice(soal[random], 1)
         }
+        console.log(this.state.soal)
     }
 
     cekNilai = (e,i,item) => {
