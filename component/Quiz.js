@@ -30,6 +30,10 @@ export default class Quiz extends React.Component {
         }
     }
 
+    componentDidMount = () => {
+        console.log(this.state.soal)
+    }
+
     cekNilai = (e,i,item) => {
         if(item === this.state.soal[this.state.number].jawaban_benar){
             this.setState({
