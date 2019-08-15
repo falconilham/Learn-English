@@ -1,7 +1,7 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 import React, { PureComponent } from 'react';
-import { StyleSheet, ScrollView, View, Text, TouchableOpacity, Image, ImageBackground, Button } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, Image } from "react-native";
 
 export default class Score extends React.Component{
     constructor(props){
@@ -10,11 +10,12 @@ export default class Score extends React.Component{
             nilai : this.props.navigation.state.params.nilai
         }
     }
+    
     render(){
         return(
             <View>
-               <ImageBackground source={require('./image/menu.jpg')} style={styles.container}>
-                <TouchableOpacity style={styles.item_Home} >
+                <ImageBackground source={require('./image/menu.jpg')} style={styles.container}>
+                    <View style={styles.item_Home} >
                         <View style={{width: "80%", height: "80%"}}>
                             <Text style={styles.fonts}>Your Score Is</Text>
                             <Text style={styles.Score}>{this.state.nilai}</Text>
@@ -29,9 +30,11 @@ export default class Score extends React.Component{
                                 <Text style={styles.Score}>Mantap</Text>
                             </View>
                         )}
+                    </View>
+                    <TouchableOpacity style={styles.Button} onPress={() => this.props.navigation.navigate('Home')}>
+                        <Image source={require('./image/Back.png')} style={styles.BtnBack}/>
                     </TouchableOpacity>
-                    <Button onPress={() => this.props.navigation.navigate('Home')} title="Back To Home" />
-               </ImageBackground>
+                </ImageBackground>
             </View>
         )
     }
@@ -42,7 +45,6 @@ const styles = StyleSheet.create({
         display: "flex", 
         flexDirection: "column",
         alignItems: "center",
-        justifyContent:"center",
         width: "100%",
         height: "100%",
         backgroundColor: "white"
@@ -52,6 +54,8 @@ const styles = StyleSheet.create({
         height: "30%", 
         justifyContent: "center", 
         alignItems: "center", 
+        alignSelf: "center",
+        marginTop: "40%"
     },
     fonts:{
         textAlign: "center",
@@ -67,5 +71,16 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontWeight: "bold",
         color:"red"
+    },
+    Button:{
+        width: 100, 
+        height: 100, 
+        justifyContent: "center", 
+        alignItems: "center",
+        padding:0
+    },
+    BtnBack:{
+        width: "100%", 
+        height:"100%"
     }
 })

@@ -5,44 +5,82 @@ var Data = {
     "Fruits":
     [
         {
-            "english": "Lion",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Banana",
+            "indonesia": "Pisang",
+            "image": require('./image/Pisang.png')
 
         },
         {
-            "english": "Lion",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Apple",
+            "indonesia": "Apel",
+            "image": require('./image/Apel.jpg')
 
         },
         {
-            "english": "Lion",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Manggo",
+            "indonesia": "Mangga",
+            "image": require('./image/Mangga.jpg')
 
         },
         {
-            "english": "Lion",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Water Melon",
+            "indonesia": "Semangka",
+            "image": require('./image/Semangka.png')
 
-        }
+        },
     ],
     "Hobby":
     [
         {
-            "english": "Lasdas",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Fishing",
+            "indonesia": "Memancing",
+            "image": require('./image/Memancing.png')
+
+        },
+        {
+            "english": "Cooking",
+            "indonesia": "Memasak",
+            "image": require('./image/Memasak.jpg')
+
+        },
+        {
+            "english": "Swimming",
+            "indonesia": "Berenang",
+            "image": require('./image/Berenang.jpg')
+
+        },
+        {
+            "english": "Writting",
+            "indonesia": "Menulis",
+            "image": require('./image/Menulis.jpg')
+
         }
     ],
     "Animals":
     [
         {
-            "english": "Gatau",
-            "indonesia": "singa",
-            "image": require('./image/Lion.jpg')
+            "english": "Lion",
+            "indonesia": "Singa",
+            "image": require('./image/Singa.png')
+
+        },
+        {
+            "english": "Monkey",
+            "indonesia": "Monyet",
+            "image": require('./image/Monyet.png')
+
+        },
+        {
+            "english": "Snake",
+            "indonesia": "Ular",
+            "image": require('./image/Ular.png')
+
+        },
+        {
+            "english": "Horse",
+            "indonesia": "Kuda",
+            "image": require('./image/Kuda.png')
+
         }
     ]
     
