@@ -8,7 +8,7 @@ export default class Quiz extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            soal: [],
+            soal: Soal.slice(),
             number: 0,
             nilai: 0,
             random: Math.floor(Math.random() * Soal.length)
@@ -23,13 +23,7 @@ export default class Quiz extends React.Component {
     }
 
     UNSAFE_componentWillMount = () => {
-        let soal = Soal.slice();
-        let random = Math.floor(Math.random() * soal.length)
-        for(var x = 0; x < 20; x++){
-            this.state.soal.push(soal[random])
-            soal.splice(soal[random], 1)
-        }
-        console.log(this.state.soal)
+        
     }
 
     componentDidMount = () => {
@@ -37,7 +31,8 @@ export default class Quiz extends React.Component {
     }
 
     cekNilai = (e,i,item) => {
-        if(item === this.state.soal[this.state.number].jawaban_benar){
+        console.log(this.state.soal[this.state.random].id)
+        if(item === this.state.soal[this.state.random].jawaban_benar){
             this.setState({
                 nilai: this.state.nilai + 1 * 10 / 2
             })
@@ -46,6 +41,8 @@ export default class Quiz extends React.Component {
                 nilai: this.state.nilai + 0 * 10 / 2
             })
         }
+        this.state.soal.splice(this.state.random, 1)
+        this.setState({random : Math.floor(Math.random() * this.state.soal.length)})
         if(this.state.number === 19){
             this.props.navigation.navigate('Score', {nilai: this.state.nilai});
         }else{
@@ -60,11 +57,11 @@ export default class Quiz extends React.Component {
             <View style={styles.container}>
                 <Text style={{fontWeight: "bold", justifyContent:"flex-start",top: 0, position: "absolute",marginHorizontal: 10 , alignSelf:"flex-start", color: "white"}}>Silakan Mengerjakan</Text>
                 <View style={styles.form_soal}>
-                    <Text>{ribet.number + 1}.{ribet.soal[ribet.number].Soal}</Text>
+                    <Text>{ribet.number + 1}.{ribet.soal[ribet.random].Soal}</Text>
                 </View>
                 <View style={styles.form_jawaban}>
                     <View style={{flex : 1, flexDirection: 'row', flexWrap: "wrap", alignItems: 'flex-start', justifyContent: "space-around"}}>
-                        {ribet.soal[ribet.number].jawaban.map((item, i ) => {
+                        {ribet.soal[ribet.random].jawaban.map((item, i ) => {
                             return(
                                 <View key={i} style={{width: "35%", marginVertical: 10, marginTop: 20}}>
                                     <Button onPress={() => this.cekNilai(this, i, item)} title={item} />
@@ -131,10 +128,10 @@ const styles = StyleSheet.create({
     },
     form_jawaban:{
       padding: 10,
-      justifyContent: 'center',
+      justifyContent: "space-evenly",
       alignItems: 'center',
       backgroundColor:"white",
-      height: "35%",
+      minHeight: "35%",
       width: "80%",
       borderRadius: 10,
     },
