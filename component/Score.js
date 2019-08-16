@@ -23,11 +23,11 @@ export default class Score extends React.Component{
                         <Text>Note :</Text>
                         {this.state.nilai >= 0 && this.state.nilai <= 49 ? (
                             <View>
-                                <Text style={styles.Note}>Bodoh Sekali</Text>
+                                <Text style={styles.Note}>Belajar Lebih Giat Lagi</Text>
                             </View>
                         ):(
                             <View>
-                                <Text style={styles.Score}>Mantap</Text>
+                                <Text style={styles.Score}>Luar Biasa</Text>
                             </View>
                         )}
                     </View>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
     Note:{
         textAlign: "center",
-        fontSize: 50,
+        fontSize: 30,
         fontWeight: "bold",
         color:"red"
     },

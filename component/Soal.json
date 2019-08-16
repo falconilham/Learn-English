@@ -224,6 +224,13 @@
     "jawaban_benar": "eat"
   },
   {
+    "id": 33,
+    "tipe_soal": "text",
+    "Soal": ". . . has four legs.",
+    "jawaban": ["Chicken","Duck","Goat","Worm"],
+    "jawaban_benar": "Goat"
+  },
+  {
     "id": 34,
     "tipe_soal": "text",
     "Soal": "Mom, this is Mutiara. … my friend.",
@@ -297,9 +304,9 @@
   {
     "id": 44,
     "tipe_soal": "text",
-    "Soal": " Dada, lengan, siku. In English are . . ",
-    "jawaban": ["Chest, hand, knee","Chest, hand, elbow","Chest, arm, elbow","Shoulder, arm, knee"],
-    "jawaban_benar": "Chest, arm, elbow"
+    "Soal": " What Is The Meaning Of Apel?",
+    "jawaban": ["Apple","Banana","Manggo","Avocado"],
+    "jawaban_benar": "We"
   },
   {
     "id": 45,
@@ -328,6 +335,13 @@
     "Soal": "  I have ... fingers",
     "jawaban": ["Ten","Nine","Five","Seven"],
     "jawaban_benar": "Ten"
+  },
+  {
+    "id": 49,
+    "tipe_soal": "text",
+    "Soal": "  What is Macan In English?",
+    "jawaban": ["Lion","Tiger","Snake","Cat"],
+    "jawaban_benar": "Tiger"
   },
   {
     "id": 50,

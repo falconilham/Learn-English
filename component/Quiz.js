@@ -27,7 +27,7 @@ export default class Quiz extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log(this.state.soal)
+        console.log(Soal.length)
     }
 
     cekNilai = (e,i,item) => {
